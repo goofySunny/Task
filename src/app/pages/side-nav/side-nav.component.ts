@@ -1,4 +1,5 @@
 import { Component, Injectable } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -6,7 +7,7 @@ import { Component, Injectable } from '@angular/core';
 @Component({
   selector: 'app-side-nav',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './side-nav.component.html',
   styleUrl: './side-nav.component.scss'
 })
