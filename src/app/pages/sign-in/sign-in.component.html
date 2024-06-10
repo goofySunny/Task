@@ -10,7 +10,7 @@
                 <div class="d-flex col-12 p-2 align-items-baseline">
                     <label for="user" class="p-1">username</label>
                     <div class="customized-div">
-                        <input class="ms-2 custom-input" type="text" name="username">
+                        <input class="ms-2 custom-input" [(ngModel)]="username" type="text" name="username">
                     </div>
                 </div>
                 <div class="d-flex col-12 p-2 align-items-baseline">
@@ -25,7 +25,7 @@
             </div>
         </div>
         <div class="justify-content-center d-flex">
-            <button class="btn btn-success">Login</button>
+            <button class="btn btn-success" (click)="signIn()">Login</button>
         </div>
     </div>
 </div>
