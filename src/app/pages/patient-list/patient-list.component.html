@@ -48,7 +48,6 @@
                         <td data-cell="cancel"><button class="btn btn-danger">Cancel</button></td>
                         <td data-cell="edit"><button class="btn btn-info">Edit</button></td>
                     </tr>
-
                 </tbody>
             </table>
         </div>
@@ -60,17 +59,39 @@
     </div>
 </div>
 <div class="modal" id="modal">
-    <div class="card opacity-100 row inner">
-        <div class="col-1 mx-0 align-self-start">
+    <div class="card row inner p-3">
+        <div class="col-12 mx-0 align-self-start">
             <button class="btn btn-default custom-button" (click)="closeModal()">
                 <img src="assets/close.svg" alt="">
             </button>
         </div>
-        <div class="col-6">
+        <div class="col-12">
             <label>Patient name</label>
         </div>
         <div class="col-6">
-            <input type="text">
+            <input type="text" placeholder="John Doe">
+        </div>
+        <div class="col-12">
+            <label>Description</label>
+        </div>
+        <div class="col-6">
+            <input type="text" placeholder="Sick">
+        </div>
+        <div class="col-12">
+            <label>Phone number</label>
+        </div>
+        <div class="col-6">
+            <input type="text" placeholder="09188181128">
+        </div>
+        <div class="col-12">
+            <label>visit date</label>
+        </div>
+        <div class="col-6">
+            <input type="text" placeholder="1380/12/28">
+        </div>
+        <div class="mt-2">
+            <button class="btn btn-success me-2">Add</button>
+            <button class="btn btn-danger" (click)="closeModal()">Cancel</button>
         </div>
     </div>
 </div>
