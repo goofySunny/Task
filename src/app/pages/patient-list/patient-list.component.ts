@@ -1,7 +1,6 @@
 import { CommonModule, NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { NgxPersianModule } from 'ngx-persian';
 
 
 export interface Patient {
@@ -15,7 +14,7 @@ export interface Patient {
 @Component({
   selector: 'app-patient-list',
   standalone: true,
-  imports: [CommonModule, NgFor, FormsModule, NgxPersianModule],
+  imports: [CommonModule, NgFor, FormsModule],
   templateUrl: './patient-list.component.html',
   styleUrl: './patient-list.component.scss'
 })
