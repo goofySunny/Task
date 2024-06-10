@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { UserDataService } from '../../service/user-data-service/user-data.service';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { stringify } from 'querystring';
 
 @Component({
   selector: 'app-sign-in',
@@ -18,8 +19,8 @@ export class SignInComponent {
   }
 
   signIn() {
-    this.userDataService.username = this.username;
-    this.route.navigate(['dashboard'])
+    this.userDataService.setUsername(this.username);
+    this.route.navigate(['dashboard']);
   }
 
 

@@ -4,7 +4,17 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UserDataService {
-  username: string = '';
+  username : string = '';
 
   constructor() { }
+
+
+  setUsername(username : string) {
+    this.username = username;
+    console.log(this.username);
+  }
+
+  getUsername() {
+    return this.username;
+  }
 }

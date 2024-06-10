@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserDataService } from '../../service/user-data-service/user-data.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,5 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './dashboard.component.scss'
 })
 export class DashboardComponent {
+  username : string = this.userDataService.username;
 
+  constructor(private userDataService: UserDataService) {}
 }
