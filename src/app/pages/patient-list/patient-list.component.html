@@ -16,37 +16,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td data-cell="patient">Ali najafian</td>
-                        <td data-cell="description">mariz shode</td>
-                        <td data-cell="phone number">09188181128</td>
-                        <td data-cell="visit date">emrooz</td>
-                        <td data-cell="cancel"><button class="btn btn-danger">Cancel</button></td>
-                        <td data-cell="edit"><button class="btn btn-info">Edit</button></td>
-                    </tr>
-                    <tr>
-                        <td data-cell="patient">Ali najafian</td>
-                        <td data-cell="description">mariz shode</td>
-                        <td data-cell="phone number">09188181128</td>
-                        <td data-cell="visit date">emrooz</td>
-                        <td data-cell="cancel"><button class="btn btn-danger">Cancel</button></td>
-                        <td data-cell="edit"><button class="btn btn-info">Edit</button></td>
-                    </tr>
-                    <tr>
-                        <td data-cell="patient">Ali najafian</td>
-                        <td data-cell="description">mariz shode</td>
-                        <td data-cell="phone number">09188181128</td>
-                        <td data-cell="visit date">emrooz</td>
-                        <td data-cell="cancel"><button class="btn btn-danger">Cancel</button></td>
-                        <td data-cell="edit"><button class="btn btn-info">Edit</button></td>
-                    </tr>
-                    <tr>
-                        <td data-cell="patient">Ali najafian</td>
-                        <td data-cell="description">mariz shode</td>
-                        <td data-cell="phone number">09188181128</td>
-                        <td data-cell="visit date">emrooz</td>
-                        <td data-cell="cancel"><button class="btn btn-danger">Cancel</button></td>
-                        <td data-cell="edit"><button class="btn btn-info">Edit</button></td>
+                    <tr *ngFor="let patient of patients">
+                        <td class="require-header" data-cell="patient">{{patient.name}}</td>
+                        <td class="require-header" data-cell="description">{{patient.description}}</td>
+                        <td class="require-header" data-cell="phone number">{{patient.phoneNumber}}</td>
+                        <td class="require-header" data-cell="visit date">{{patient.visitDate | date : 'yyyy/MM/dd'}}</td>
+                        <td><button class="btn btn-info" (click)="editPatient(patient.id)">Edit</button></td>
+                        <td><button class="btn btn-danger" (click)="cancelPatient(patient.id)">Cancel</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -69,28 +45,29 @@
             <label>Patient name</label>
         </div>
         <div class="col-6">
-            <input type="text" placeholder="John Doe">
+            <input type="text" [(ngModel)]="addPatient.name" placeholder="John Doe">
         </div>
         <div class="col-12">
             <label>Description</label>
         </div>
         <div class="col-6">
-            <input type="text" placeholder="Sick">
+            <input type="text" [(ngModel)]="addPatient.description" placeholder="Sick">
         </div>
         <div class="col-12">
             <label>Phone number</label>
         </div>
         <div class="col-6">
-            <input type="text" placeholder="09188181128">
+            <input type="text" [(ngModel)]="addPatient.phoneNumber" placeholder="09188181128">
         </div>
         <div class="col-12">
             <label>visit date</label>
         </div>
         <div class="col-6">
-            <input type="text" placeholder="1380/12/28">
+            <input type="text" [ngModel]="addPatient.visitDate | date: 'yyyy/MM/dd'" (ngModelChange)="addPatient.visitDate" #visitDate="ngModel">
         </div>
         <div class="mt-2">
-            <button class="btn btn-success me-2">Add</button>
+            <button class="btn btn-success me-2" *ngIf="editing" (click)="editPatientSave()">Update</button>
+            <button class="btn btn-success me-2" *ngIf="!editing" (click)="appendPatient()">Add</button>
             <button class="btn btn-danger" (click)="closeModal()">Cancel</button>
         </div>
     </div>

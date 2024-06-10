@@ -44,7 +44,7 @@ tr:nth-child(even) {
         display: block;
     }
 
-    td::before {
+    .require-header::before {
         font-weight: 700;
         text-transform: capitalize;
         content: attr(data-cell) ": ";
