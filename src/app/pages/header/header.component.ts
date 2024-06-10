@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { UserDataService } from '../../service/user-data-service/user-data.service';
 
 @Component({
   selector: 'app-header',
@@ -10,4 +11,11 @@ import { RouterLink } from '@angular/router';
 })
 export class HeaderComponent {
 
+
+  constructor(private userDataService: UserDataService, private router: Router) {}
+
+  logout() {
+    this.userDataService.setUsername('');
+    this.router.navigate([''])
+  }
 }
