@@ -17,4 +17,12 @@ export class UserDataService {
   getUsername() {
     return this.username;
   }
+
+  isUserLoggedIn() {
+    if (this.username == '') {
+      return false;
+    } else {
+      return true
+    }
+  }
 }
