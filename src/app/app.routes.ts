@@ -6,7 +6,7 @@ import { RouteGuardService } from './service/route-guard/route-guard.service';
 import { PatientListComponent } from './pages/patient-list/patient-list.component';
 
 export const routes: Routes = [
-    {path: '', redirectTo: 'signin', pathMatch: 'full'},
+    {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
     {path: 'signin', component: SignInComponent},
     {path: 'patients', component: PatientListComponent, canActivate: [RouteGuardService]},
     {path: 'dashboard', component: DashboardComponent, canActivate: [RouteGuardService]},
