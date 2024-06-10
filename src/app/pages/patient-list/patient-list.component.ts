@@ -9,4 +9,17 @@ import { Component } from '@angular/core';
 })
 export class PatientListComponent {
 
+
+
+  constructor() {
+
+  }
+
+  openAddPanel() {
+    document.getElementById("modal")!.style.display = "flex";
+  }
+  
+  closeModal() {
+    document.getElementById("modal")!.style.display = "none";
+  }
 }

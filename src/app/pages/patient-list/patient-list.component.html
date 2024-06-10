@@ -48,14 +48,29 @@
                         <td data-cell="cancel"><button class="btn btn-danger">Cancel</button></td>
                         <td data-cell="edit"><button class="btn btn-info">Edit</button></td>
                     </tr>
-                    
+
                 </tbody>
             </table>
         </div>
-        <div class="container d-flex justify-content-start">
-            <button class="btn btn-info">
+        <div class="container d-flex justify-content-start mt-2 mb-5">
+            <button class="btn btn-info" (click)="openAddPanel()">
                 Add
             </button>
+        </div>
+    </div>
+</div>
+<div class="modal" id="modal">
+    <div class="card opacity-100 row inner">
+        <div class="col-1 mx-0 align-self-start">
+            <button class="btn btn-default custom-button" (click)="closeModal()">
+                <img src="assets/close.svg" alt="">
+            </button>
+        </div>
+        <div class="col-6">
+            <label>Patient name</label>
+        </div>
+        <div class="col-6">
+            <input type="text">
         </div>
     </div>
 </div>
