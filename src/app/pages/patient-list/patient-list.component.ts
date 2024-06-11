@@ -49,6 +49,7 @@ export class PatientListComponent {
   }
 
   closeModal() {
+    this.resetAddPatientForm();
     document.getElementById("modal")!.style.display = "none";
   }
 
@@ -76,6 +77,7 @@ export class PatientListComponent {
   }
 
   resetAddPatientForm(): void {
+    console.log('cleared' + this.addPatient);
     this.addPatient = { id: 0, name: "", description: "", phoneNumber: "", visitDate: new Date() };
   }
 }
