@@ -3,15 +3,25 @@
     height: 80px;
 }
 
-.nameCopani{
+.nameCompany {
     background-color: rgb(81, 199, 200);
     width: 300px;
     height: 90px;
-    transform:matrix(1, 0, -0.674509, 1, -30, 0)
+    transform: matrix(1, 0, -0.674509, 1, -30, 0);
+    display: flex;
+
 }
 
 .custom-button {
     background: none;
     border: none;
     margin: 0;
+}
+
+@media (max-width: 450px) {
+    .nameCompany {
+        transform: none;
+        display: flex;
+        width: 200px;
+    }
 }
