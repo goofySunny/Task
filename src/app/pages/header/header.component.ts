@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { UserDataService } from '../../service/user-data-service/user-data.service';
 import { SideNavComponent } from '../side-nav/side-nav.component';
 import { CommonModule } from '@angular/common';
+import { ComponentCommunicationService } from '../../service/component-communication/component-communication.service';
 
 @Component({
   selector: 'app-header',
@@ -14,7 +15,8 @@ import { CommonModule } from '@angular/common';
 export class HeaderComponent {
 
 
-  constructor(private userDataService: UserDataService, private router: Router, private sideNavComponent: SideNavComponent) {}
+  constructor(private userDataService: UserDataService, private router: Router, private sideNavComponent: SideNavComponent,
+    private componentCommunicationService: ComponentCommunicationService) { }
 
   logout() {
     this.userDataService.logOut();
@@ -24,6 +26,10 @@ export class HeaderComponent {
   navOpen() {
     console.log('called SideNavComponent')
     this.sideNavComponent.openNav();
+  }
+
+  headerVisibility() {
+    return this.componentCommunicationService.showHeader;
   }
 
   isUserLoggedInCheck() {

@@ -1,4 +1,4 @@
-<div class="header">
+<div class="header" *ngIf="headerVisibility()">
     <nav class="nav d-flex justify-content-between align-items-baseline">
         <div>
             <a class="nav-link navbar-brand" [routerLink]="['dashboard']" aria-current="page">سایان رایان</a>

@@ -1,5 +1,6 @@
 import { Component, Injectable } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { ComponentCommunicationService } from '../../service/component-communication/component-communication.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,15 +15,17 @@ import { RouterLink } from '@angular/router';
 export class SideNavComponent {
 
 
-  constructor() {}
-/* Set the width of the side navigation to 250px */
-openNav() {
-  console.log('call taken')
-  document.getElementById("mySidenav")!.style.width = "250px";
-}
+  constructor(private componentCommunicationService:ComponentCommunicationService) { }
+  /* Set the width of the side navigation to 250px */
+  openNav() {
+    console.log('call taken')
+    document.getElementById("mySidenav")!.style.width = "250px";
+    this.componentCommunicationService.toggleHeader();
+  }
 
-/* Set the width of the side navigation to 0 */
-closeNav() {
-  document.getElementById("mySidenav")!.style.width = "0";
-}
+  /* Set the width of the side navigation to 0 */
+  closeNav() {
+    document.getElementById("mySidenav")!.style.width = "0";
+    this.componentCommunicationService.toggleHeader();
+  }
 }
