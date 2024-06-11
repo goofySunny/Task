@@ -1,12 +1,20 @@
-<div class="header" *ngIf="headerVisibility()">
+<div class="header">
+
     <nav class="nav d-flex justify-content-between align-items-baseline">
-        <div>
-            <a class="nav-link navbar-brand" [routerLink]="['dashboard']" aria-current="page">سایان رایان</a>
+
+        <div class="nameCopani  d-flex justify-content-end align-items-center">
+
+            <a class="nav-link navbar-brand fs-3 pe-5 text-light fw-bold" [routerLink]="['dashboard']"
+                aria-current="page">سایان رایان</a>
+
         </div>
-        <div>
-            <button class="custom-button" (click)="logout()" *ngIf="isUserLoggedInCheck()">Log out</button>
-            <button class="custom-button" (click)="navOpen()" *ngIf="isUserLoggedInCheck()">
-                <img src="assets/menu_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+
+        <div class="d-flex">
+            <button class="btn btn-default text-white" (click)="logout()" *ngIf="isUserLoggedInCheck()">
+                Log out
+            </button>
+            <button class="btn btn-default" (click)="navOpen()">
+                <img class="me-3 pb-4" src="assets/menu.png" alt="" />
             </button>
         </div>
     </nav>

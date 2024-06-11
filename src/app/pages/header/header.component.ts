@@ -33,6 +33,6 @@ export class HeaderComponent {
   }
 
   isUserLoggedInCheck() {
-    return this.userDataService.isUserLoggedIn()
+    return this.userDataService.isUserLoggedIn();
   }
 }

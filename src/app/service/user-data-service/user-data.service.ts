@@ -4,14 +4,12 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UserDataService {
-  username : string = '';
 
   constructor() { }
 
 
   setUsername(username : string) {
     sessionStorage.setItem("username", username);
-    this.username = username;
   }
 
   getUsername() {
