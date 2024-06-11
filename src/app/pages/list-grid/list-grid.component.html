@@ -1,12 +1,14 @@
 <div class="container mb-5">
-    <!-- Buttons to choose list or grid view -->
-    <button (click)="listView()" class="btn btn-default">
-        <img src="assets/list.svg" alt="">
-    </button>
-    <button (click)="gridView()" class="btn btn-default">
-        <img src="assets/grid.svg" alt="">
-    </button>
-
+    <h2>In this list you can alternate between two types of views</h2>
+    <div class="d-flex justify-content-end">
+        <!-- Buttons to choose list or grid view -->
+        <button (click)="listView()" class="btn btn-default">
+            <img src="assets/list.svg" alt="">
+        </button>
+        <button (click)="gridView()" class="btn btn-default">
+            <img src="assets/grid.svg" alt="">
+        </button>
+    </div>
     <div class="row">
         <div class="column border" style="background-color:#aaa;" *ngFor="let patient of patients">
             <h2>{{ patient.name }}</h2>
