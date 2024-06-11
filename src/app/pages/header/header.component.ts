@@ -26,7 +26,7 @@ export class HeaderComponent {
     this.sideNavComponent.openNav();
   }
 
-  isUserLoggedIn() {
+  isUserLoggedInCheck() {
     return this.userDataService.isUserLoggedIn()
   }
 }
