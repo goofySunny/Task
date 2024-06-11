@@ -1,31 +1,40 @@
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-12 justify-content-center d-flex">
-            <div>
-                <h2>Sign in</h2>
-            </div>
-        </div>
-        <div class="d-flex justify-content-center">
-            <div class="border rounded p-2 mt-5">
-                <div class="d-flex col-12 p-2 align-items-baseline">
-                    <label for="user" class="p-1">username</label>
-                    <div class="customized-div rounded">
-                        <input class="ms-2 custom-input" [(ngModel)]="username" type="text" name="username">
+      
+        <div class="d-flex justify-content-center ">
+            <div class=" col-12 col-xl-4  rounded p-2 mt-5" >
+
+                <div class=" col-12 p-2 align-items-baseline ">
+                    <label for="user" class="fw-bold text-body-tertiary">Username</label>
+                    <div class="customized-div  ">
+                        <input class=" custom-input" [(ngModel)]="username" type="text" name="username">
                     </div>
                 </div>
-                <div class="d-flex col-12 p-2 align-items-baseline">
-                    <label for="password" class="p-1">password</label>
-                    <div class="customized-div rounded d-flex align-items-baseline">
-                        <input id="password" class="ms-2 custom-input" type="password" name="password">
+                <div class="col-12  p-2 align-items-baseline">
+                    <label for="password" class="fw-bold text-body-tertiary">Password</label>
+                    <div class="customized-div  d-flex justify-content-between">
+                        <input id="password" class=" custom-input" type="password" name="password">
                         <button type="button" class="btn btn-light custom-button" (click)="togglePasswordVisibility()">
-                            <img id="my-image" src="assets/Enable.svg" alt="" class="img-fluid my-image">
+                           
+                              <img id="my-image" src="assets/Enable.svg" alt="" class=" img-fluid my-image ">
+                           
                         </button>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="justify-content-center d-flex">
-            <button class="btn btn-success" (click)="signIn()">Login</button>
+
+        <!-- Button-login -->
+         
+        <div class="justify-content-center d-flex ">
+            <button class="btn-login mt-5 p-2 rounded-5 fw-bold text-light " (click)="signIn()">Login</button>
         </div>
+
+        <!-- Button-signin -->
+        <div class="justify-content-center d-flex">
+            <button class="btn-signin mt-3 p-2 rounded-5 fw-bold " (click)="signIn()">Sign in</button>
+        </div>
+
+            
     </div>
 </div>
