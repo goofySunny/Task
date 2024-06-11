@@ -17,7 +17,7 @@ export class HeaderComponent {
   constructor(private userDataService: UserDataService, private router: Router, private sideNavComponent: SideNavComponent) {}
 
   logout() {
-    this.userDataService.setUsername('');
+    this.userDataService.logOut();
     this.router.navigate([''])
   }
 

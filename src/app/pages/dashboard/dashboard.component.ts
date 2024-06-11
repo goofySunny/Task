@@ -9,7 +9,7 @@ import { UserDataService } from '../../service/user-data-service/user-data.servi
   styleUrl: './dashboard.component.scss'
 })
 export class DashboardComponent {
-  username : string = this.userDataService.getUsername();
+  username : string | null = this.userDataService.getUsername();
 
   constructor(private userDataService: UserDataService) {}
 }

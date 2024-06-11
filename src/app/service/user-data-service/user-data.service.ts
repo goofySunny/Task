@@ -10,19 +10,23 @@ export class UserDataService {
 
 
   setUsername(username : string) {
+    sessionStorage.setItem("username", username);
     this.username = username;
-    console.log(this.username);
   }
 
   getUsername() {
-    return this.username;
+    return sessionStorage.getItem("username");
   }
 
   isUserLoggedIn() {
-    if (this.username == '') {
-      return false;
+    if (sessionStorage.getItem("username")) {
+      return true;
     } else {
-      return true
+      return false;
     }
+  }
+
+  logOut() {
+    sessionStorage.removeItem("username")
   }
 }
