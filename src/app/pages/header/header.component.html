@@ -1,6 +1,6 @@
 <div class="header">
 
-    <nav class="nav d-flex justify-content-between align-items-baseline">
+    <nav class="nav d-flex justify-content-between align-items-center">
 
         <div class="nameCopani  d-flex justify-content-end align-items-center">
 
@@ -9,12 +9,12 @@
 
         </div>
 
-        <div class="d-flex">
-            <button class="btn btn-default text-white" (click)="logout()" *ngIf="isUserLoggedInCheck()">
+        <div class="me-4">
+            <button class="custom-button text-white" (click)="logout()" *ngIf="isUserLoggedInCheck()">
                 Log out
             </button>
-            <button class="btn btn-default" (click)="navOpen()">
-                <img class="me-3 pb-4" src="assets/menu.png" alt="" />
+            <button class="custom-button" (click)="navOpen()">
+                <img src="assets/menu.png" alt="" />
             </button>
         </div>
     </nav>
