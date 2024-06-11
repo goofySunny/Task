@@ -30,8 +30,8 @@ export class PatientListComponent {
     { id: this.id++, name: "جیمی", description: "اعتماد بنفس", phoneNumber: "09188181128", visitDate: new Date("1380/12/12") },
   ]
 
-  addPatient: Patient = { id: 123124123, name: "", description: "", phoneNumber: "", visitDate: new Date() }
-
+  addPatient: any = { id: 123124123, name: "", description: "", phoneNumber: "", visitDate: new Date() };
+  targetedUpdate : any = { id: 123124123, name: "", description: "", phoneNumber: "", visitDate: new Date() };
 
   constructor() {
 
@@ -39,7 +39,8 @@ export class PatientListComponent {
 
   editPatient(id: number) {
     this.editing = true;
-    this.addPatient = this.patients.filter(patient => patient.id == id)[0];
+    this.targetedUpdate = { ...this.patients.find(patient => patient.id == id)}
+    this.addPatient = { ...this.patients.find(patient => patient.id == id) };
     this.openAddPanel();
   }
 
@@ -52,11 +53,11 @@ export class PatientListComponent {
   }
 
   editPatientSave() {
-    if (this.patients.filter(patient => patient.id == this.addPatient.id)[0] !== null) {
-      this.closeModal();
-      this.editing = false;
-      this.resetAddPatientForm();
-    }
+    let targetedPatient = this.patients.findIndex(patient => patient.id == this.targetedUpdate.id);
+    this.patients[targetedPatient] = this.addPatient
+    this.closeModal();
+    this.editing = false;
+    this.resetAddPatientForm();
   }
 
   appendPatient() {
