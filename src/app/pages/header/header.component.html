@@ -4,8 +4,8 @@
             <a class="nav-link navbar-brand" [routerLink]="['dashboard']" aria-current="page">سایان رایان</a>
         </div>
         <div>
-            <button class="custom-button" (click)="logout()" *ngIf="isUserLoggedIn()">Log out</button>
-            <button class="custom-button" (click)="navOpen()">
+            <button class="custom-button" (click)="logout()" *ngIf="isUserLoggedInCheck()">Log out</button>
+            <button class="custom-button" (click)="navOpen()" *ngIf="isUserLoggedInCheck    ()">
                 <img src="assets/menu_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="">
             </button>
         </div>
